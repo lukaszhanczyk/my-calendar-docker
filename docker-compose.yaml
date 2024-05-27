@@ -8,6 +8,10 @@ services:
       dockerfile: ../my-calendar-docker/frontend/Dockerfile
     stdin_open: true
     tty: true
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
     volumes:
       - ../my-calendar-react:/var/react
     ports:
